@@ -70,8 +70,21 @@
 
     </div>
 
+    <div class="post-footer">
     {% block page_after_footer %}
     {% endblock page_after_footer %}
+    </div>
+
+    {% if config.extra.valine %}
+        <div id="vcomments"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: '{{ config.extra.valine.app_id }}',
+                appKey: '{{ config.extra.valine.app_key }}'
+            })
+        </script>
+    {% endif %}
 </article>
 
 {% endblock content %}
