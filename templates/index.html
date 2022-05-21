@@ -1,7 +1,7 @@
 {% import "post_macros.html" as post_macros %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
     <head>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -16,9 +16,11 @@
       {% endif %}
 
       {% block js %}
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script> -->
+          <script crossorigin="anonymous" integrity="sha384-wEpzWQjx2cAZH0dWbs0yERz/XdefbIlX5blnSszkdz74KNvkYtwawfCkfmoNgkgu" src="https://lib.baomitu.com/slideout/1.0.1/slideout.min.js"></script>
           {% if config.extra.valine %}
-          <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+          <!-- <script src='//unpkg.com/valine/dist/Valine.min.js'></script> -->
+          <script crossorigin="anonymous" integrity="sha512-YxgP4nyc/U+4YLQBrL2rRheq0uvNqNkuNr2q72j+OaaNTrE1ktJBembNQaTJu3aG3x9OjivU+DU/nkbogIE1nA==" src="https://lib.baomitu.com/valine/1.4.18/Valine.min.js"></script>
           {% endif %}
           {% if config.extra.katex_enable %}
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
@@ -95,7 +97,7 @@
                                         {{ page.summary | safe }}
                                     </div>
                                     <div class="read-more">
-                                        <a href="{{ page.permalink }}">Read more...</a>
+                                        <a href="{{ page.permalink }}">阅读全文</a>
                                     </div>
                                 </article>
                             {% endfor %}

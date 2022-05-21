@@ -3,7 +3,7 @@
 {% block content %}
     <div class="taxonomies">
         <div class="taxonomies__title">
-            {{ terms | length }} tags in total
+            总计 {{ terms | length }} 种
         </div>
         <div class="taxonomies__items">
             {% for tag in terms %}
