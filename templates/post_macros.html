@@ -1,4 +1,4 @@
-{% macro title(page) %}
+{% macro title(page, include_visitors) %}
     <header class="post__header">
         <h1 class="post__title">
             <a href="{{ page.permalink }}">{{ page.title }}</a>
@@ -17,10 +17,12 @@
                     {% endfor %}
                 </div>
             {% endif %}
-            <span class="post__category leancloud_visitors" id="/blog/{{ page.slug }}/" data-flag-title="{{ page.title }}">
-                <em class="post-meta-item-text"  style="font-style: normal;">· 阅读量 </em>
-                <i class="leancloud-visitors-count"  style="font-style: normal;">1000000</i>
-            </span>
+            {% if include_visitors %}
+                <span class="post__category leancloud_visitors" id="/blog/{{ page.slug }}/" data-flag-title="{{ page.title }}">
+                    <em class="post-meta-item-text"  style="font-style: normal;">· 阅读量 </em>
+                    <i class="leancloud-visitors-count"  style="font-style: normal;">1000000</i>
+                </span>
+            {% endif %}
         </div>
     </header>
 {% endmacro title %}

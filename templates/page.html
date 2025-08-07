@@ -32,7 +32,7 @@
 {% endif %}
 
 <article class="post">
-    {{ post_macros::title(page=page) }}
+    {{ post_macros::title(page=page, include_visitors=true) }}
     <div class="post-content">
       {{ page.content | safe }}
     </div>

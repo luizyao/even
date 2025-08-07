@@ -92,7 +92,7 @@
                         <div class="posts">
                             {% for page in paginator.pages %}
                                 <article class="post">
-                                    {{ post_macros::title(page=page) }}
+                                    {{ post_macros::title(page=page, include_visitors=false) }}
                                     <div class="post__summary">
                                         {{ page.summary | safe }}
                                     </div>
